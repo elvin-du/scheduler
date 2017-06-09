@@ -3,6 +3,9 @@ package task
 import (
 	"strings"
 	"time"
+	//	"encoding/json"
+	json "github.com/json-iterator/go"
+	log "github.com/sirupsen/logrus"
 )
 
 func Time2Duration(t time.Time) time.Duration {
@@ -24,4 +27,14 @@ func FullURL(addr, path string, params map[string]string) string {
 		url += k + "=" + v + "&"
 	}
 	return strings.TrimSuffix(url, "&")
+}
+
+func StringToMap(s string) map[string]string {
+	m := make(map[string]string)
+	err := json.UnmarshalFromString(s, &m)
+	if nil != err {
+		log.Errorln(err)
+	}
+
+	return m
 }

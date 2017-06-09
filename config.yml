@@ -1,0 +1,7 @@
+mysql:
+  main:
+    addr: localhost:3306
+    user: root
+    passwd: JTabc.123
+    dbname: scheduler
+    pool: 100

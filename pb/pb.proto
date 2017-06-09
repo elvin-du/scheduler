@@ -1,0 +1,42 @@
+syntax = "proto3";
+package pb;
+
+service Task{
+	//rpc Insert(InsertRequest) returns (InsertResponse);
+	//rpc Update(UpdateRequest) returns (UpdateResponse);
+	//rpc Upsert(UpsertRequest) returns (UpsertResponse);
+	//rpc Delete(DeleteRequest) returns (DeleteResponse);
+	//rpc Get(GetRequest) returns (GetResponse);
+	rpc GetAll(GetAllRequest) returns (GetAllResponse);
+}
+
+message InsertRequest{
+	string Id   = 1;
+	string Name = 2;
+	string Description = 3;
+	int32  Retry = 4;
+	string Method = 5;
+	string Addr = 6;
+	string Path  = 7;
+	string Params = 8;
+	int64  StartAt = 9;
+	int64  CreatedAt = 10;
+	string retErr = 11;
+}
+message InsertResponse{}
+
+message GetAllRequest{
+}
+message GetAllResponse{
+	string Id   = 1;
+	string Name = 2;
+	string Description = 3;
+	int32  Retry = 4;
+	string Method = 5;
+	string Addr = 6;
+	string Path  = 7;
+	string Params = 8;
+	int64  StartAt = 9;
+	int64  CreatedAt = 10;
+	string retErr = 11;
+}
